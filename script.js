@@ -17,7 +17,7 @@ const songs = [
     },
     {
         id: 2,
-        title: "Rendu",
+        title: "Rendu Kadhal",
         artist: "Aromal",
         duration: "1:31",
         cover: "assets/images/IMG_7536.jpeg",
