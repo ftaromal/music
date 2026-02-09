@@ -25,12 +25,19 @@ const songs = [
     },
     {
         id: 3,
-        title: "Ravin mazha",
+        title: "Ee Ravvum",
         artist: "Aromal",
-        duration: "Coming Soon",
-        cover: "assets/images/song3.jpg", // Using placeholder image since generation failed
-        audio: "",
-        upcoming: true
+        duration: "1:22",
+        cover: "assets/images/IMG-20250613-WA0051.jpg",
+        audio: "assets/audio/ee ravvum-WA0034_Ringtone.m4a"
+    },
+    {
+        id: 4,
+        title: "Unnai Kanadhu",
+        artist: "Aromal",
+        duration: "1:14",
+        cover: "assets/images/IMG-20260209-WA0013.jpg",
+        audio: "assets/audio/unnai kanadhu-WA0015_Ringtone.m4a"
     }
 ];
 

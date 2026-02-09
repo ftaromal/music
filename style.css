@@ -72,6 +72,8 @@ body {
     color: var(--color-text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* NAVIGATION BAR */
@@ -209,7 +211,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(10, 10, 10, 0.95) 100%);
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
     z-index: 2;
 }
 
@@ -360,6 +362,7 @@ section {
     transition: var(--transition-normal);
     position: relative;
     overflow: hidden;
+    will-change: transform;
 }
 
 .song-card::before {
@@ -407,6 +410,7 @@ section {
     height: 100%;
     object-fit: cover;
     transition: var(--transition-normal);
+    will-change: transform;
 }
 
 .song-card:hover .song-cover img {
@@ -544,6 +548,7 @@ section {
     font-size: 1.25rem;
     transition: var(--transition-normal);
     text-decoration: none;
+    will-change: transform;
 }
 
 .social-link:hover {
@@ -735,6 +740,7 @@ section {
     cursor: pointer;
     transition: var(--transition-fast);
     padding: 0.5rem;
+    will-change: transform;
 }
 
 .control-btn:hover {
@@ -751,11 +757,15 @@ section {
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
+    color: var(--color-text-primary) !important;
+    will-change: transform;
 }
 
 .play-btn:hover {
     background: var(--color-accent-hover);
     box-shadow: var(--shadow-glow);
+    transform: scale(1.05);
+    color: var(--color-text-primary) !important;
 }
 
 .player-progress-container {
@@ -882,6 +892,23 @@ section {
     50% {
         height: 20px;
     }
+}
+
+/* Smooth scrolling for all browsers */
+* {
+    scroll-behavior: smooth;
+}
+
+/* GPU acceleration for better performance */
+.song-card,
+.hero-btn,
+.play-icon,
+.social-link,
+.stat-card,
+.contact-item {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
 }
 
 /* RESPONSIVE DESIGN - MOBILE FIRST */
