@@ -27,17 +27,17 @@ const songs = [
         id: 3,
         title: "Ee Ravvum",
         artist: "Aromal",
-        duration: "1:22",
+        duration: "1:26",
         cover: "assets/images/IMG-20250613-WA0051.jpg",
-        audio: "assets/audio/ee ravvum-WA0034_Ringtone.m4a"
+        audio: "assets/audio/ee ravvum-trimmed.m4a"
     },
     {
         id: 4,
         title: "Unnai Kanadhu",
         artist: "Aromal",
-        duration: "1:14",
+        duration: "1:18",
         cover: "assets/images/IMG-20260209-WA0013.jpg",
-        audio: "assets/audio/unnai kanadhu-WA0015_Ringtone.m4a"
+        audio: "assets/audio/unnai kanadhu-trimmed.m4a"
     }
 ];
 
