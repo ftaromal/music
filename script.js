@@ -8,6 +8,30 @@
 // ============================================
 const songs = [
     {
+        id: 7,
+        title: "Aziyat 8D",
+        artist: "Aromal",
+        duration: "1:45",
+        cover: "assets/images/IMG_2656.JPG",
+        audio: "assets/audio/aziyat-8D.wav"
+    },
+    {
+        id: 6,
+        title: "Nadiyon Sa 8D",
+        artist: "Aromal",
+        duration: "1:52",
+        cover: "assets/images/IMG_1682.jpg",
+        audio: "assets/audio/nadiyon-sa-8D.wav"
+    },
+    {
+        id: 5,
+        title: "Rave Guru 8D",
+        artist: "Aromal",
+        duration: "1:38",
+        cover: "assets/images/IMG_1455.JPG",
+        audio: "assets/audio/rave_guru_8D.wav"
+    },
+    {
         id: 1,
         title: "Parayathe Ariyathe",
         artist: "Aromal",
@@ -350,17 +374,22 @@ function setupEventListeners() {
 
     // Progress bar
     progressBar.addEventListener('click', seek);
-    progressBar.addEventListener('mousedown', () => {
+    progressBar.addEventListener('pointerdown', (e) => {
         isSeeking = true;
+        progressBar.setPointerCapture?.(e.pointerId);
+        seek(e);
     });
 
-    document.addEventListener('mousemove', (e) => {
+    progressBar.addEventListener('pointermove', (e) => {
         if (isSeeking) {
             seek(e);
         }
     });
 
-    document.addEventListener('mouseup', () => {
+    progressBar.addEventListener('pointerup', () => {
+        isSeeking = false;
+    });
+    progressBar.addEventListener('pointercancel', () => {
         isSeeking = false;
     });
 
@@ -370,17 +399,22 @@ function setupEventListeners() {
 
     // Volume slider drag
     let isVolumeChanging = false;
-    volumeSlider.addEventListener('mousedown', () => {
+    volumeSlider.addEventListener('pointerdown', (e) => {
         isVolumeChanging = true;
+        volumeSlider.setPointerCapture?.(e.pointerId);
+        setVolume(e);
     });
 
-    document.addEventListener('mousemove', (e) => {
+    volumeSlider.addEventListener('pointermove', (e) => {
         if (isVolumeChanging) {
             setVolume(e);
         }
     });
 
-    document.addEventListener('mouseup', () => {
+    volumeSlider.addEventListener('pointerup', () => {
+        isVolumeChanging = false;
+    });
+    volumeSlider.addEventListener('pointercancel', () => {
         isVolumeChanging = false;
     });
 }
